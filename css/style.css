@@ -1,0 +1,227 @@
+:root {
+    --font-texto: 'Belleza', sans-serif;
+    --font-nome-casal: 'Parisienne', cursive;
+    --color: #333;
+    --color-fundo: #f2f2f2;
+    
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/imagens/fundo.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: var(--color-fundo);
+    z-index: 1;
+}
+
+.imagem {
+    max-width: 190px;
+    position: absolute;
+    rotate: 26deg;
+    top: 34%;
+    left: 0%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.imagem-two {
+    max-width: 164px;
+    position: absolute;
+    rotate: 211deg;
+    top: 54%;
+    left: 75%;
+    z-index: -1;
+}
+
+.header {
+    padding: 20px;
+    text-align: center;
+}
+
+.header p {
+    color: var(--color);
+    font-family: var(--font-texto);
+    font-size: 18px;
+}
+
+.content {
+    padding: 20px;
+}
+
+.couple-image {
+    text-align: center;
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+.couple-image img {
+    max-width: 100%;
+    height: 240px ;
+    border-radius: 50%;
+}
+
+.details, .dress-code, .dress-description-man {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.details h2 {
+    color: var(--color);
+    font-family: var(--font-nome-casal);
+    font-size: 44px;
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.details p {
+    color: var(--color);
+    font-size: 18px;
+    font-family: var(--font-texto);
+}
+
+
+.date {
+    display: flex;
+    justify-content: center;
+}
+
+.day {
+    display: flex;
+    align-items: center;
+    color: var(--color);
+    font-family: var(--font-texto);
+    font-size: 30px;
+    padding: 10px;
+}
+
+.month-year, .week-hours {
+    display: flex;
+    text-align: center;
+    align-items: center;
+    color: var(--color);
+    font-family: var(--font-texto);
+    font-size: 20px;
+    border-left: 1px solid black;
+    padding: 10px;
+}
+
+.event-place {
+    text-align: center;
+    color: var(--color);
+    font-family: var(--font-texto);
+    font-size: 18px;
+
+}
+
+.container-link {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+
+.container-link a {
+    text-align: center;
+    margin: 10px;
+    flex-basis: 200px;
+    text-decoration: none;
+    color: var(--color);
+}
+
+.container-link img {
+    display: block;
+    margin: 0 auto;
+}
+
+.container-link p {
+    color: var(--color);
+    font-family: var(--font-texto);
+    font-size: 18px;
+    margin: 0;
+}
+
+
+.dress-code p, .dress-description-woman p, 
+.dress-description-man p {
+    font-family: var(--font-texto);
+    font-size: 16px;
+    color: var(--color);
+    text-align: center;
+    width: 80%;
+}
+
+.dress-description-woman, .dress-code, .dress-description-man {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.dress-description-woman img, 
+.dress-description-man img {
+    width: 80%;
+}
+
+.back {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.back a {
+    text-decoration: none;
+    border: 1px var(--color) solid;
+    border-radius: 25px;
+    padding: 5px;
+    width: 60px;
+    text-align: center;
+    color: var(--color);
+    font-family: var(--font-texto);
+}
+
+@media (min-width: 600px) {
+    .container-link a {
+      flex-basis: auto;
+      flex-grow: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .imagem {
+      width: 121px;
+      top: 250px;
+      height: auto;
+      max-width: 200px;
+    }
+
+    .imagem-two {
+        width: 117px;
+        top: 555px;
+        height: auto;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .imagem {
+      width: 110px;
+      top: 250px;
+      height: auto;
+    }
+
+    .imagem-two {
+        width: 110px;
+        top: 584px;
+        height: auto;
+    }
+  }
