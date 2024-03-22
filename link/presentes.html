@@ -1,66 +1,109 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mensagem</title>
   <style>
- body body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-}
+    body body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
 
-.container {
-  background-image: url('../imagens/fundo.png'); 
-  background-size: cover;
-  background-position: center;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
+    .container {
+      background-image: url('../imagens/fundo.png');
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
 
-.message-container {
-  width: 80%;
-  max-width: 600px; /* Largura máxima do quadro */
-  background-color: rgba(255, 255, 255, 0.8); /* Cor do fundo do quadro */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Sombra para o efeito de elevação */
-}
+    .message-container {
+      width: 80%;
+      max-width: 500px;
+      /* Largura máxima do quadro */
+      background-color: rgba(255, 255, 255, 0.8);
+      /* Cor do fundo do quadro */
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.3);
+      /* Sombra para o efeito de elevação */
+    }
 
-.message-frame {
-  border: 2px solid #333; /* Cor da borda do quadro */
-  padding: 20px;
-  border-radius: 10px;
-}
+    .message-frame {
+      border: 2px solid #333;
+      /* Cor da borda do quadro */
+      padding: 20px;
+      border-radius: 10px;
+    }
 
-.message {
-  margin: 0;
-}
+    .message {
+      margin: 0;
+      opacity: 0;
+      /* Inicia a mensagem com opacidade 0 */
+      animation: fadeIn 3s forwards;
+      /* Aplica a animação fadeIn */
+    }
 
-.back-button {
-  margin-top: 20px;
-  display: inline-block;
-  padding: 10px 20px;
-  background-color: #333;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
-}
-</style>
+    .back-button {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <audio id="audio" src="/song/Kenny G. - Going Home.mp3" autoplay loop></audio>
+
   <div class="container">
     <div class="message-container">
       <div class="message-frame">
-        <h1 class="message">O melhor presente que vocês podem nos dar é o seu tempo, sua atenção, seu amor e seu interesse por isso contamos muito com a sua presença</h1>
+        <h1 class="message">O melhor presente que vocês podem nos dar é o seu tempo, sua atenção, seu amor por isso contamos muito com a sua presença</h1>
       </div>
     </div>
     <a href="/" class="back-button">&#8592; Voltar</a>
   </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const messageElement = document.getElementById('textAnimation');
+      const message = "O melhor presente que vocês podem nos dar é o seu tempo, sua atenção, seu amor e seu interesse por isso contamos muito com a sua presença";
+      let index = 0;
+
+      function animateText() {
+        if (index < message.length) {
+          messageElement.textContent += message.charAt(index);
+          index++;
+          setTimeout(animateText, 15); // Ajuste o tempo conforme desejado para controlar a velocidade da animação
+        }
+      }
+
+      animateText();
+    });
+
+  </script>
+
 </body>
+
 </html>

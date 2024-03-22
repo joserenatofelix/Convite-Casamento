@@ -39,3 +39,30 @@ function handleVisibilityChange() {
 
     // Atualize imediatamente ao carregar a página
     updateCountdown();
+
+    // Número de corações
+const numberOfHearts = 35;
+
+// Função para gerar um número aleatório entre dois valores
+function randomBetween(min, max) {
+    return Math.random() * (max - min) + min;
+}
+
+// Função para criar corações
+function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = `${randomBetween(0, window.innerWidth)}px`; // Posição horizontal aleatória
+    heart.style.animationDuration = `${randomBetween(2, 5)}s`; // Duração da animação aleatória
+    document.getElementById('heart-container').appendChild(heart);
+
+    // Remover o coração do DOM após a animação terminar
+    heart.addEventListener('animationend', () => {
+        heart.remove();
+    });
+}
+
+// Criar corações
+for (let i = 0; i < numberOfHearts; i++) {
+    createHeart();
+}

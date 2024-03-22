@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hearts Falling Animation</title>
+    <style>
+        body,
+        html {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            background-image: url('imagens/coracao.png');
+            /* Substitua 'heart.png' pelo caminho para sua imagem de coração */
+            background-size: contain;
+            width: 25px;
+            /* Ajuste o tamanho conforme necessário */
+            height: 25px;
+            /* Ajuste o tamanho conforme necessário */
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-10%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translateY(110vh);
+                opacity: 50;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        // Número de corações
+        const numberOfHearts = 50;
+
+        // Função para gerar um número aleatório entre dois valores
+        function randomBetween(min, max) {
+            return Math.random() * (max - min) + min;
+        }
+
+        // Função para criar corações
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.style.left = `${randomBetween(0, window.innerWidth)}px`; // Posição horizontal aleatória
+            heart.style.animationDuration = `${randomBetween(2, 5)}s`; // Duração da animação aleatória
+            document.body.appendChild(heart);
+
+            // Remover o coração do DOM após a animação terminar
+            heart.addEventListener('animationend', () => {
+                heart.remove();
+            });
+        }
+
+        // Criar corações
+        for (let i = 0; i < numberOfHearts; i++) {
+            createHeart();
+        }
+
+    </script>
+</body>
+
+</html>

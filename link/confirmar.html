@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmar Presença</title>
+  <style>
+    /* Estilos gerais */
+    body,
+    html {
+      height: 100%;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: url('../imagens/fundo.png');
+      /* Imagem de fundo */
+      background-size: cover;
+      /* Cobrir toda a tela */
+      background-position: center;
+      /* Centralizar a imagem */
+    }
+
+    /* Estilos do quadro de mensagem */
+    .container {
+      text-align: center;
+    }
+
+    .message-container {
+      max-width: 600px;
+      padding: 20px;
+      border: 5px solid #302185;
+      /* Borda */
+      border-radius: 10px;
+      /* Borda arredondada */
+      background-color: rgba(201, 177, 177, 0.8);
+      /* Cor de fundo do quadro com transparência */
+    }
+
+    .message-frame {
+      position: relative;
+    }
+
+    /* Estilo da palavra piscando */
+    .piscando {
+      animation: piscar 1s infinite;
+      /* Animação de piscar */
+      color: red;
+    }
+
+    /* Animação de piscar */
+    @keyframes piscar {
+
+      0%,
+      49% {
+        opacity: 2;
+        /* Texto visível */
+      }
+
+      50%,
+      100% {
+        opacity: 0;
+        /* Texto invisível */
+      }
+    }
+
+    /* Estilos para o botão de voltar */
+    .back-button {
+      margin-top: 5px;
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    .back-button:hover {
+      color: #eee34b;
+      /* Cor do botão ao passar o mouse */
+    }
+
+    /* Estilos específicos da piscina */
+    .piscina {
+      width: 600px;
+      /* Largura da foto */
+      height: 300px;
+      /* Altura da foto */
+      background-image: url('../imagens/piscina.png');
+      /* Caminho da imagem da piscina */
+      background-size: cover;
+      /* Ajustar o tamanho da imagem para cobrir todo o elemento */
+      background-position: center;
+      /* Centralizar a imagem */
+      border: 2px solid #ccc;
+      /* Adicionar uma borda para destacar a foto */
+    }
+  </style>
+</head>
+
+<body>
+  <audio id="audio" src="/song/Kenny G. - Going Home.mp3" autoplay loop></audio>
+
+  <div class="container">
+    <div class="message-container">
+      <div class="message-frame">
+        <h1 class="message">
+          <span class="piscando">Obrigado por confirmar sua Presença!</span> <br> Vamos te receber para um almoço com um
+          churrasquinho muito gostoso, traga seu traje de banho para aproveitar a piscina
+          <span class="piscando">Traga a sua cerveja!</span>
+        </h1>
+        <div class="piscina"></div>
+        <a href="/" class="back-button">&#8592; Voltar</a>
+      </div>
+    </div>
+  </div>
+  <script>
+
+  </script>
+</body>
+
+</html>

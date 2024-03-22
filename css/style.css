@@ -24,6 +24,27 @@ body {
     z-index: 1;
 }
 
+/* Corações */
+.heart {
+    position: absolute;
+    background-image: url('../imagens/coracao.png'); /* Substitua 'heart.png' pelo caminho para sua imagem de coração */
+    background-size: contain;
+    width: 20px; /* Ajuste o tamanho conforme necessário */
+    height: 20px; /* Ajuste o tamanho conforme necessário */
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(110vh);
+        opacity: 1;
+    }
+}
+
 .imagem {
     max-width: 250px;
     position: absolute;
@@ -148,7 +169,7 @@ body {
 .container-link p {
     color: var(--color);
     font-family: var(--font-texto);
-    font-size: 18px;
+    font-size: 20px;
     margin: 0;
 }
 
