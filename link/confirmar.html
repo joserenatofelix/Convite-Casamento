@@ -83,9 +83,9 @@
 
     /* Estilos específicos da piscina */
     .piscina {
-      width: 600px;
+      width: 100%;
       /* Largura da foto */
-      height: 300px;
+      height: 200px;
       /* Altura da foto */
       background-image: url('../imagens/piscina.png');
       /* Caminho da imagem da piscina */
@@ -95,6 +95,14 @@
       /* Centralizar a imagem */
       border: 2px solid #ccc;
       /* Adicionar uma borda para destacar a foto */
+    }
+
+    /* Media query para telas menores */
+    @media (max-width: 600px) {
+      .message-container {
+        max-width: 90%;
+        /* Reduzindo a largura do container para telas menores */
+      }
     }
   </style>
 </head>
@@ -107,7 +115,7 @@
       <div class="message-frame">
         <h1 class="message">
           <span class="piscando">Obrigado por confirmar sua Presença!</span> <br> Vamos te receber para um almoço com um
-          churrasquinho muito gostoso, traga seu traje de banho para aproveitar a piscina
+          churrasquinho muito gostoso, traga seu traje de banho para aproveitar a piscina! <br>
           <span class="piscando">Traga a sua cerveja!</span>
         </h1>
         <div class="piscina"></div>
@@ -115,9 +123,6 @@
       </div>
     </div>
   </div>
-  <script>
-
-  </script>
 </body>
 
 </html>
