@@ -9,13 +9,13 @@
 body {
     margin: 0;
     padding: 0;
-    background-image: url('/imagens/fundo.png');
+    background-image: url('fundo.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 .container {
-    background-image: url('/imagens/flores.png');
+    background-image: url('flores.png');
     position: relative;
     overflow: hidden;
     width: 100%;
@@ -28,7 +28,7 @@ body {
 /* Corações */
 .heart {
     position: absolute;
-    background-image: url('../imagens/coracao.png'); /* Substitua 'heart.png' pelo caminho para sua imagem de coração */
+    background-image: url('coracao.png'); /* Substitua 'heart.png' pelo caminho para sua imagem de coração */
     background-size: contain;
     width: 20px; /* Ajuste o tamanho conforme necessário */
     height: 20px; /* Ajuste o tamanho conforme necessário */
