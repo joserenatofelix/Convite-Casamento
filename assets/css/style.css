@@ -3,7 +3,7 @@
     --font-nome-casal: 'Parisienne', cursive;
     --color: #333;
     --color-fundo: #FDF5E6;
-    
+
 }
 
 body {
@@ -12,6 +12,33 @@ body {
     background-image: url('../img/fundo.png');
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+/* Controles do Audio */
+
+.controls {
+    display: inline-block;
+    vertical-align: top;
+}
+
+button {
+    margin: 5px;
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+input[type="range"] {
+    margin-top: 5px;
+    vertical-align: middle;
 }
 
 .container {
@@ -28,10 +55,13 @@ body {
 /* Corações */
 .heart {
     position: absolute;
-    background-image: url('../img/coracao.png'); /* Substitua 'heart.png' pelo caminho para sua imagem de coração */
+    background-image: url('../img/coracao.png');
+    /* Substitua 'heart.png' pelo caminho para sua imagem de coração */
     background-size: contain;
-    width: 20px; /* Ajuste o tamanho conforme necessário */
-    height: 20px; /* Ajuste o tamanho conforme necessário */
+    width: 20px;
+    /* Ajuste o tamanho conforme necessário */
+    height: 20px;
+    /* Ajuste o tamanho conforme necessário */
     animation: fall linear infinite;
 }
 
@@ -40,6 +70,7 @@ body {
         transform: translateY(-10%);
         opacity: 0;
     }
+
     100% {
         transform: translateY(110vh);
         opacity: 1;
@@ -120,8 +151,9 @@ body {
     display: flex;
     justify-content: center;
     margin-top: 50px;
-  }
-  .circle {
+}
+
+.circle {
     width: 80px;
     height: 80px;
     border-radius: 50%;
@@ -133,19 +165,23 @@ body {
     align-items: center;
     flex-direction: column;
     color: white;
-  }
-  .countdown-item {
+}
+
+.countdown-item {
     font-size: 1.5rem;
     color: white;
-  }
-  @keyframes pulse {
+}
+
+@keyframes pulse {
     0% {
-      transform: scale(1);
+        transform: scale(1);
     }
+
     100% {
-      transform: scale(1.1);
+        transform: scale(1.1);
     }
-  }
+}
+
 .container-link {
     display: flex;
     justify-content: center;
@@ -194,17 +230,17 @@ body {
 
 @media (min-width: 600px) {
     .container-link a {
-      flex-basis: auto;
-      flex-grow: 1;
+        flex-basis: auto;
+        flex-grow: 1;
     }
 }
 
 @media (max-width: 600px) {
     .imagem {
-      width: 121px;
-      top: 250px;
-      height: auto;
-      max-width: 200px;
+        width: 121px;
+        top: 250px;
+        height: auto;
+        max-width: 200px;
     }
 
     .imagem-two {
@@ -212,13 +248,13 @@ body {
         top: 555px;
         height: auto;
     }
-  }
+}
 
-  @media (max-width: 400px) {
+@media (max-width: 400px) {
     .imagem {
-      width: 110px;
-      top: 250px;
-      height: auto;
+        width: 110px;
+        top: 250px;
+        height: auto;
     }
 
     .imagem-two {
@@ -226,4 +262,4 @@ body {
         top: 584px;
         height: auto;
     }
-  }
+}

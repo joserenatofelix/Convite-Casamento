@@ -4,8 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mensagem</title>
-
+  <title>Prentes do Casal</title>
   <style>
     body body {
       margin: 0;
@@ -38,18 +37,32 @@
     }
 
     .message-frame {
-      border: 2px solid #333;
-      /* Cor da borda do quadro */
+      border: 2px solid black;
+      /* Borda preta de 2px */
       padding: 20px;
-      border-radius: 10px;
+      /* Espaçamento interno */
     }
 
     .message {
-      margin: 0;
-      opacity: 0;
-      /* Inicia a mensagem com opacidade 0 */
-      animation: fadeIn 3s forwards;
-      /* Aplica a animação fadeIn */
+      animation: pulse 1s infinite alternate;
+      /* Animação de pulsação */
+    }
+
+    @keyframes pulse {
+      0% {
+        color: #4CAF50;
+        /* Cor inicial */
+      }
+
+      50% {
+        color: #ff0000;
+        /* Cor que pisca */
+      }
+
+      100% {
+        color: #4c5eaf;
+        /* Cor inicial */
+      }
     }
 
     .back-button {
@@ -79,37 +92,98 @@
         /* Ajuste a largura para telas menores */
       }
     }
+
+    /* Controles do Audio */
+
+    .controls {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    button {
+      margin: 5px;
+      padding: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    input[type="range"] {
+      margin-top: 5px;
+      vertical-align: middle;
+    }
+
   </style>
 </head>
-
 <body>
   <audio id="audio" src="../music/Kenny G - Theme From Dying Young.mp3" autoplay loop></audio>
 
   <div class="container">
     <div class="message-container">
       <div class="message-frame">
-        <h1 class="message">O melhor presente que vocês podem nos dar é o seu tempo, sua atenção, seu amor por isso
-          contamos muito com a sua presença</h1>
+        <h1 class="message">&#128527 Sim queremos presente! &#128521<br><br>
+          Mas a presença de vocês é o melhor presente que podem nos dar junto com o seu tempo, sua atenção, seu amor por
+          isso
+          contamos muito com a sua presença!&#128540</h1>
       </div>
     </div>
-    <a href="https://joserenatofelix.github.io/Convite-Casamento/" class="back-button">&#8592; Voltar</a>
+    <a href="/index.html" class="back-button">&#8592; Voltar</a>
+
+    <div class="controls">
+      <button id="playButton">&#9658;</button>
+      <button id="stopButton">⏹</button>
+      <input type="range" id="volumeRange" min="0" max="1" step="0.1" value="1">
+    </div>
+
   </div>
 
   <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const messageElement = document.getElementById('textAnimation');
-      const message = "O melhor presente que vocês podem nos dar é o seu tempo, sua atenção, seu amor e seu interesse por isso contamos muito com a sua presença";
-      let index = 0;
+    var audio = document.getElementById("audio");
+    var playButton = document.getElementById("playButton");
+    var stopButton = document.getElementById("stopButton");
+    var volumeRange = document.getElementById("volumeRange");
 
-      function animateText() {
-        if (index < message.length) {
-          messageElement.textContent += message.charAt(index);
-          index++;
-          setTimeout(animateText, 15); // Ajuste o tempo conforme desejado para controlar a velocidade da animação
-        }
+    playButton.addEventListener("click", function () {
+      if (audio.paused) {
+        audio.play();
+        playButton.textContent = "⏸";
+      } else {
+        audio.pause();
+        playButton.textContent = "▶";
       }
-      animateText();
     });
+
+    stopButton.addEventListener("click", function () {
+      audio.pause();
+      audio.currentTime = 0;
+      playButton.textContent = "▶";
+    });
+
+    volumeRange.addEventListener("input", function () {
+      audio.volume = volumeRange.value;
+    });
+
+    // Função para alternar as cores do texto
+    function changeTextColor() {
+      var message = document.getElementById("message");
+      if (message.classList.contains("green-text")) {
+        message.classList.remove("green-text");
+        message.classList.add("red-text");
+      } else {
+        message.classList.remove("red-text");
+        message.classList.add("green-text");
+      }
+    }
+
+    // Inicia o intervalo para alternar as cores do texto
+    setInterval(changeTextColor, 1000); // Muda a cada 1 segundo
   </script>
 </body>
 

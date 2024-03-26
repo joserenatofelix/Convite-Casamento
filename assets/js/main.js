@@ -66,3 +66,31 @@ function createHeart() {
 for (let i = 0; i < numberOfHearts; i++) {
     createHeart();
 }
+
+var audio = document.getElementById("audio");
+var playButton = document.getElementById("playButton");
+var stopButton = document.getElementById("stopButton");
+var volumeRange = document.getElementById("volumeRange");
+
+playButton.addEventListener("click", function () {
+  if (audio.paused) {
+    audio.play();
+    playButton.textContent = "⏸";
+  } else {
+    audio.pause();
+    playButton.textContent = "▶";
+  }
+});
+
+stopButton.addEventListener("click", function () {
+  audio.pause();
+  audio.currentTime = 0;
+  playButton.textContent = "▶";
+});
+
+volumeRange.addEventListener("input", function () {
+  audio.volume = volumeRange.value;
+});
+
+
+

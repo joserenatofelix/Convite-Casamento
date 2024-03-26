@@ -104,6 +104,33 @@
         /* Reduzindo a largura do container para telas menores */
       }
     }
+
+    /* Controles do Audio */
+
+    .controls {
+      display: inline-block;
+      vertical-align: top;
+    }
+
+    button {
+      margin: 5px;
+      padding: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    input[type="range"] {
+      margin-top: 5px;
+      vertical-align: middle;
+    }
   </style>
 </head>
 
@@ -119,10 +146,43 @@
           <span class="piscando">Traga a sua cerveja!</span>
         </h1>
         <div class="piscina"></div>
-        <a href="https://joserenatofelix.github.io/Convite-Casamento/" class="back-button">&#8592; Voltar</a>
+        <a href="/index.html" class="back-button">&#8592; Voltar</a>
+        <div class="controls">
+          <button id="playButton">&#9658;</button>
+          <button id="stopButton">⏹</button>
+          <input type="range" id="volumeRange" min="0" max="1" step="0.1" value="1">
+        </div>
       </div>
     </div>
   </div>
+
+  <script>
+    var audio = document.getElementById("audio");
+    var playButton = document.getElementById("playButton");
+    var stopButton = document.getElementById("stopButton");
+    var volumeRange = document.getElementById("volumeRange");
+
+    playButton.addEventListener("click", function () {
+      if (audio.paused) {
+        audio.play();
+        playButton.textContent = "⏸";
+      } else {
+        audio.pause();
+        playButton.textContent = "▶";
+      }
+    });
+
+    stopButton.addEventListener("click", function () {
+      audio.pause();
+      audio.currentTime = 0;
+      playButton.textContent = "▶";
+    });
+
+    volumeRange.addEventListener("input", function () {
+      audio.volume = volumeRange.value;
+    });
+
+  </script>
 </body>
 
 </html>
