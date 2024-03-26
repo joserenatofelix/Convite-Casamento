@@ -15,6 +15,7 @@ body {
 }
 
 .container {
+    background-image: url('/imagens/flores.png');
     position: relative;
     overflow: hidden;
     width: 100%;
