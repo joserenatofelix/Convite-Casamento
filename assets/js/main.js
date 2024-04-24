@@ -12,7 +12,7 @@ function handleVisibilityChange() {
 }
 
     // Defina a data do casamento
-    const weddingDate = new Date("2024-04-06T12:00:00");
+    const weddingDate = new Date("2050-04-06T12:00:00");
 
     function updateCountdown() {
       const now = new Date().getTime();
